@@ -1,0 +1,13 @@
+USE contact_db;
+
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,      -- Auto-incrementing ID for each record
+    full_name VARCHAR(255) NOT NULL,         -- Store the full name of the user
+    email VARCHAR(255) NOT NULL,             -- Store the email address
+    mobile VARCHAR(15) NOT NULL,             -- Store the mobile number
+    subject VARCHAR(255) NOT NULL,           -- Store the subject of the message
+    message TEXT NOT NULL,                   -- Store the message from the user
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Timestamp of when the record was created
+);
+
+CREATE INDEX idx_email ON contacts(email);
